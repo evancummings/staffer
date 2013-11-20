@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffer", "Staffer\Staffer.csproj", "{FC62BF1A-DD96-4082-B8FF-541A148DFC1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffer.Tests", "Staffer.Tests\Staffer.Tests.csproj", "{D9AA44FE-BFAA-4C27-B2B1-A293B2080091}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC62BF1A-DD96-4082-B8FF-541A148DFC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC62BF1A-DD96-4082-B8FF-541A148DFC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC62BF1A-DD96-4082-B8FF-541A148DFC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC62BF1A-DD96-4082-B8FF-541A148DFC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9AA44FE-BFAA-4C27-B2B1-A293B2080091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9AA44FE-BFAA-4C27-B2B1-A293B2080091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9AA44FE-BFAA-4C27-B2B1-A293B2080091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9AA44FE-BFAA-4C27-B2B1-A293B2080091}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
