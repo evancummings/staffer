@@ -1,0 +1,9 @@
+require 'albacore'
+
+@web_folder = File.join(File.expand_path('.'),"Staffer")
+
+#look for rake tasks in where
+Dir[File.join(File.dirname(__FILE__),'lib','tasks/*.rake')].each { |f| load f }
+
+task :default => :build
+
