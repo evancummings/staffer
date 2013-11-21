@@ -55,6 +55,7 @@
     <Compile Include="OpenStates\Models\Office.cs" />
     <Compile Include="OpenStates\OpenStatesClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ApiRequest.cs" />
     <Compile Include="Utilities\JsonSanitizer.cs" />
   </ItemGroup>
   <ItemGroup>

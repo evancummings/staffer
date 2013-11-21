@@ -14,29 +14,27 @@ namespace Staffer.OpenStates
     public class OpenStatesClient
     {
         private string _apiKey;
-        private HttpClient _httpClient;
-
+        
         public OpenStatesClient(string apiKey)
         {
             if (String.IsNullOrEmpty(apiKey)) throw new MissingApiKeyException() { HelpLink = "http://sunlightfoundation.com/api/",  };
-
             _apiKey = apiKey;
-            _httpClient = new HttpClient();
         }
 
         public async Task<List<Legislator>> FindLegislatorsByGeographyAsync(double latitude, double longitude)
         {
             ValidateGeoCoordinates(latitude, longitude);
 
-            string requestUrl = String.Format("http://openstates.org/api/v1/legislators/geo/?lat={0}&long={1}&apikey={2}", latitude, longitude, _apiKey);
+            var requestUrl = String.Format("http://openstates.org/api/v1/legislators/geo/?lat={0}&long={1}&apikey={2}", latitude, longitude, _apiKey);
+            var request = new ApiRequest(requestUrl);
+            return JsonConvert.DeserializeObject<List<Legislator>>(await request.FetchJsonAsync());
+        }
 
-            var response = await _httpClient.GetAsync(requestUrl);
-            response.EnsureSuccessStatusCode();
-
-            var json = JsonSanitizer.Santize(await response.Content.ReadAsStringAsync());
-            var results = JsonConvert.DeserializeObject<List<Legislator>>(json);
-
-            return results;
+        public async Task<Legislator> FindLegislatorById(string legislatorId)
+        {
+            string requestUrl = String.Format("http://openstates.org/api/v1/legislators/{0}/?apikey={1}", legislatorId, _apiKey);
+            var request = new ApiRequest(requestUrl);
+            return JsonConvert.DeserializeObject<Legislator>(await request.FetchJsonAsync());
         }
 
         private void ValidateGeoCoordinates(double latitude, double longitude)
@@ -53,5 +51,7 @@ namespace Staffer.OpenStates
             if (double.IsNaN(latitude))
                 throw new ArgumentException("Latitude must be a valid number.", "latitude");
         }
+
+       
     }
 }

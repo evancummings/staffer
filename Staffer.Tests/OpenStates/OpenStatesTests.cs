@@ -30,6 +30,13 @@ namespace Staffer.Tests.OpenStates
         }
 
         [TestCase]
+        public async void Get_Legislator_Detail_For_DCL000012()
+        {
+            var result = await _client.FindLegislatorById("DCL000012");
+            Assert.NotNull(result);
+        }
+
+        [TestCase]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public async void Failure_On_Upper_Latitude_Bounds()
         {
