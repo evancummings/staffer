@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="OpenStates\Exceptions\ApiKeyException.cs" />
     <Compile Include="OpenStates\Models\Legislator.cs" />
     <Compile Include="OpenStates\Models\Office.cs" />
